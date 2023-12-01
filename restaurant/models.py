@@ -11,6 +11,9 @@ class Menu(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def get_item(self):
+        return f'{self.title} : {self.price}'
 
 # Booking Model
 # name: varchar(255), no_of_guests: int(6), BookingDate: datetime

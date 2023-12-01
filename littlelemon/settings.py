@@ -40,6 +40,11 @@ INSTALLED_APPS = [
     "rest_framework",
     # Restaurant app
     "restaurant",
+    # Authtoken
+    "rest_framework.authtoken",
+    # Djoser auth
+    "djoser",
+
 
 ]
 
@@ -142,3 +147,17 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Rest framework settings
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.IsAuthenticated",
+    ],
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.TokenAuthentication",
+    ],
+}
+# Djoser settings
+DJOSER = {
+    "USER_ID_FIELD":"username"
+}
